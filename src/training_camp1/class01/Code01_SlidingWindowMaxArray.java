@@ -1,7 +1,16 @@
 package training_camp1.class01;
 
-import java.util.LinkedList ;
+import java.lang.reflect.Array;
+import java.util.LinkedList;
 
+/**
+ * 窗口、首尾指针法，
+ * 题目：
+ * 假设一个固定大小为W的窗口，依次划过arr，
+ * 返回每一次滑出窗口的最大值
+ * 例如，arr = [4,3,5,4,3,3,6,7], W = 3
+ * 返回：[5,5,5,4,6,7]
+ */
 public class Code01_SlidingWindowMaxArray {
 
 	public static int[] getMaxWindow(int[] arr, int w) {
@@ -16,21 +25,79 @@ public class Code01_SlidingWindowMaxArray {
 		//     i
 		for (int R = 0; R < arr.length; R++) { // 当前让 i -> [i] 进窗口 ， i 就是 r
 			// R -> 值  可以放在比他大的数后，或者空
+			//
 			while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[R]) {
 				qmax.pollLast();
 			}
 			qmax.addLast(R);
 			// 数进来了
 			// 如果窗口没有形成W的长度之前，不弹出数字的
+			// R-w 窗口左位置，小于左边界的值移除掉
 			if (qmax.peekFirst() == R - w) {
 				qmax.pollFirst();
 			}
 			// 以上窗口更新做完了
+			// 输出当前窗口最大值
 			if (R >= w - 1) {
 				res[index++] = arr[qmax.peekFirst()];
 			}
 		}
 		return res;
+	}
+
+	/**
+	 * 思路：
+	 * 第一步： 先将小于当前值的下标全部从队列内移除
+	 * 第二步： 将当前值下标添加进队列
+	 * 第三步： 移除过期下标，也就是小于窗口左指针
+	 * 第四步： 输出当前窗口最大值
+	 */
+	public static int[] myGetMaxWindow(int[] arr,int w){
+		int[] ints = new int[arr.length - w + 1];
+		if(arr.length==0 || w<1 || arr.length<w){
+			return null;
+		}
+		int index = 0;
+		LinkedList<Integer> linkedList = new LinkedList<>();
+		for (int i = 0; i < arr.length; i++) {
+			// 将较大值写入队列内，使队列保证从大到小顺序，头大尾小
+			while (!linkedList.isEmpty() && arr[i]>= arr[linkedList.peekLast()]){
+				linkedList.pollLast();
+			}
+			linkedList.addLast(i);
+			// 移除队列内超出窗口范围的下标
+			if(linkedList.peekFirst() == i-w){
+				linkedList.pollFirst();
+			}
+			// 当满足窗口长度时，输出当前窗口内最大值
+			if(i>=w-1){
+				ints[index++] = arr[linkedList.peekFirst()];
+			}
+
+		}
+		return ints;
+	}
+
+	public static int[] myGetMaxWindow1(int[] arr ,int w){
+		if(arr==null || w<1 || arr.length<w){
+			return null;
+		}
+		LinkedList<Integer> qmax = new LinkedList<>();
+		int[] ints = new int[arr.length-w+1];
+		int index = 0;
+		for (int i = 0; i < arr.length; i++) {
+			while (!qmax.isEmpty() && arr[qmax.peekLast()]<arr[i]){
+				qmax.pollLast();
+			}
+			qmax.addLast(i);
+			if(i-w == qmax.peekFirst()){
+				qmax.pollFirst();
+			}
+			if(i>=w-1){
+				ints[index++] = arr[qmax.peekFirst()];
+			}
+		}
+		return ints;
 	}
 
 	// for test
@@ -91,7 +158,8 @@ public class Code01_SlidingWindowMaxArray {
 		for (int i = 0; i < testTime; i++) {
 			int[] arr = generateRandomArray(maxSize, maxValue);
 			int w = (int) (Math.random() * (arr.length + 1));
-			int[] ans1 = getMaxWindow(arr, w);
+//			int[] ans1 = getMaxWindow(arr, w);
+			int[] ans1 = myGetMaxWindow1(arr, w);
 			int[] ans2 = rightWay(arr, w);
 			if (!isEqual(ans1, ans2)) {
 				System.out.println("Oops!");
