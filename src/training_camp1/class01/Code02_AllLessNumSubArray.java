@@ -1,6 +1,5 @@
 package training_camp1.class01;
 
-import com.sun.istack.internal.NotNull;
 
 import java.util.LinkedList;
 
