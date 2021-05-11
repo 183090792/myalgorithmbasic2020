@@ -1,7 +1,16 @@
 package training_camp1.class01;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.LinkedList;
 
+/**
+ * 问题：
+ * 给定一个整型数组arr，和一个整数num
+ * 某个arr中的子数组sub，如果想达标，必须满足：
+ * sub中最大值 – sub中最小值 <= num，
+ * 返回arr中达标子数组的数量
+ */
 public class Code02_AllLessNumSubArray {
 
 	public static int getNum(int[] arr, int num) {
@@ -52,6 +61,52 @@ public class Code02_AllLessNumSubArray {
 		return res;
 	}
 
+	/**
+	 * 思路：
+	 * 将数组依次往后组合，找出最大的合规子数组，然后将子数组拆分为更小额，累加
+	 */
+	public static int myGetNum(int[] arr, int num){
+		if (arr == null || arr.length == 0) {
+			return 0;
+		}
+		int result = 0;
+		LinkedList<Integer> max = new LinkedList<>();
+		LinkedList<Integer> min = new LinkedList<>();
+		int r = 0;
+		int l = 0;
+		while (l < arr.length) {
+			while (r < arr.length){
+				while (!max.isEmpty() && arr[r] >= arr[max.peekLast()]){
+					max.pollLast();
+				}
+				max.addLast(r);
+				while (!min.isEmpty() && arr[r]<=arr[min.peekLast()]){
+					min.pollLast();
+				}
+				min.addLast(r);
+				if(arr[max.peekFirst()] - arr[min.peekFirst()] > num){
+					break;
+				}
+				r++;
+			}
+			result+=r-l;
+			if(min.peekFirst() == l){
+				min.pollFirst();
+			}
+			if(max.peekFirst() == l){
+				max.pollFirst();
+			}
+			l++;
+		}
+		return result;
+	}
+
+	public static int myGetNum1(int[] arr,int num){
+		
+
+		return 1;
+	}
+
 	// for test
 	public static int[] getRandomArray(int len) {
 		if (len < 0) {
@@ -75,10 +130,12 @@ public class Code02_AllLessNumSubArray {
 	}
 
 	public static void main(String[] args) {
+//		int[] arr = {9,4,3,2};
 		int[] arr = getRandomArray(30);
 		int num = 5;
 		printArray(arr);
 		System.out.println(getNum(arr, num));
+		System.out.println(myGetNum(arr, num));
 
 	}
 

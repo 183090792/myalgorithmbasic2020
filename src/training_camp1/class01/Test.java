@@ -1,5 +1,9 @@
 package training_camp1.class01;
 
+/**
+ * 象棋问题
+ * 马从(0,0)出发，有K步要走，并且一定要走完，最终来到x，y位置的方法数是多少
+ */
 public class Test {
 
 	public static int ways1(int x, int y, int k) {
