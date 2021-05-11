@@ -1,6 +1,6 @@
 package training_camp1.class01;
 
-import java.util.LinkedList;
+import java.util.LinkedList ;
 
 public class Code01_SlidingWindowMaxArray {
 
