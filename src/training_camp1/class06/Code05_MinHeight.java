@@ -1,5 +1,11 @@
 package training_camp1.class06;
 
+/**
+ * 题目：
+ *
+ *  给定一棵二叉树的头节点head
+ * 求以head为头的树中，最小深度是多少？
+ */
 public class Code05_MinHeight {
 
 	public static class Node {

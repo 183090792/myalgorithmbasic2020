@@ -2,6 +2,18 @@ package training_camp1.class04;
 
 import java.util.ArrayList;
 
+/**
+ * KMP算法核心
+ *
+ * 1）如何理解next数组
+ * 2）如何利用next数组加速匹配过程，优化时的两个实质！（私货解释）
+ */
+
+/**
+ * 题目：
+ * 给定两棵二叉树的头节点head1和head2
+ * 想知道head1中是否有某个子树的结构和head2完全一样
+ */
 public class Code02_TreeEqual {
 
 	public static class Node {

@@ -4,6 +4,13 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * 线段树
+ * 1，一种支持范围整体修改和范围整体查询的数据结构
+ * 2，解决的问题范畴
+ * 大范围信息可以只由左、右两侧信息加工出，
+ * 而不必遍历左右两个子范围的具体状况
+ */
 public class Code01_CoverMax {
 
 	public static int maxCover1(int[][] lines) {

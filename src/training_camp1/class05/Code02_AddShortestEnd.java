@@ -1,5 +1,13 @@
 package training_camp1.class05;
 
+/**
+ * Manacher算法核心
+ *
+ * 1）理解回文半径数组
+ * 2）理解所有中心的回文最右边界R，和取得R时的中心点C
+ * 3）理解   L…(i`)…C…(i)…R  的结构，以及根据i’回文长度进行的状况划分
+ * 4）每一种情况划分，都可以加速求解i回文半径的过程
+ */
 public class Code02_AddShortestEnd {
 
 	public static String shortestEnd(String s) {

@@ -1,5 +1,12 @@
 package training_camp1.class05;
 
+/**
+ * Manacher算法
+ *
+ * 假设字符串str长度为N，想返回最长回文子串的长度
+ * 时间复杂度O(N)
+ */
+
 public class Code01_Manacher {
 
 	public static int manacher(String s) {
@@ -19,9 +26,9 @@ public class Code01_Manacher {
 			// i位置扩出来的答案，i位置扩的区域，至少是多大。
 			pArr[i] = R > i ? Math.min(pArr[2 * C - i], R - i) : 1;
 			while (i + pArr[i] < str.length && i - pArr[i] > -1) {
-				if (str[i + pArr[i]] == str[i - pArr[i]])
+				if (str[i + pArr[i]] == str[i - pArr[i]]) {
 					pArr[i]++;
-				else {
+				} else {
 					break;
 				}
 			}

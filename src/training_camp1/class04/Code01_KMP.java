@@ -1,5 +1,12 @@
 package training_camp1.class04;
 
+/**
+ * KMP算法
+ *
+ * 假设字符串str长度为N，字符串match长度为M，M <= N
+ * 想确定str中是否有某个子串是等于match的。
+ * 时间复杂度O(N)
+ */
 public class Code01_KMP {
     // O(N)
 	public static int getIndexOf(String s, String m) {
