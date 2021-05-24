@@ -17,6 +17,14 @@ package training_camp1.class02;
  */
 
 /**
+ * 四种模型：
+ * 从左往右的尝试模型  范围上懂得尝试模型  多样本对应模型 业务限制模型
+ *
+ * 适用于：严格的、没有条件转移的
+ * 备注：除了初始项之外，所有的东西不分条件转移的看可以用
+ */
+
+/**
  * 提目：
  * 斐波那契数列矩阵乘法方式的实现
  */
@@ -169,6 +177,7 @@ public class Code01_FibonacciProblem {
 		return res;
 	}
 
+//	三阶，奶牛问题
 	public static int c3(int n) {
 		if (n < 1) {
 			return 0;
