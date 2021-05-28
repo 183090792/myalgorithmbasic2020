@@ -1,6 +1,5 @@
 package training_camp1.class01;
 
-import java.lang.reflect.Array;
 import java.util.LinkedList;
 
 /**
@@ -41,7 +40,8 @@ public class Code01_SlidingWindowMaxArray {
 		int index = 0;
 		// L...R
 		//     i
-		for (int R = 0; R < arr.length; R++) { // 当前让 i -> [i] 进窗口 ， i 就是 r
+		// 当前让 i -> [i] 进窗口 ， i 就是 r
+		for (int R = 0; R < arr.length; R++) {
 			// R -> 值  可以放在比他大的数后，或者空
 			//
 			while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[R]) {
