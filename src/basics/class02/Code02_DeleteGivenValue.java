@@ -1,5 +1,8 @@
 package basics.class02;
 
+/**
+ * 从单向链表中删除给定值
+ */
 public class Code02_DeleteGivenValue {
 
 	public static class Node {

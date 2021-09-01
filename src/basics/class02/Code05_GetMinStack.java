@@ -2,6 +2,9 @@ package basics.class02;
 
 import java.util.Stack;
 
+/**
+ * 获取栈的最小值
+ */
 public class Code05_GetMinStack {
 
 	public static class MyStack1 {
