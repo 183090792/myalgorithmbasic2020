@@ -1,7 +1,7 @@
 package basics.class02;
 
 /**
- * 从单向链表中删除给定值
+ * 把给定值都删除
  */
 public class Code02_DeleteGivenValue {
 

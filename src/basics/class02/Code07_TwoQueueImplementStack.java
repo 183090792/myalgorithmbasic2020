@@ -5,7 +5,8 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
- * 两个队列实现栈
+ * 如何用队列结构实现栈结构？
+ * 思路：两个队列实现栈
  */
 public class Code07_TwoQueueImplementStack {
 
