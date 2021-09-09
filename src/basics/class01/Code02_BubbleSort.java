@@ -3,6 +3,7 @@ package basics.class01;
 import java.util.Arrays;
 
 /**
+ * 冒泡排序：
  * 先找出最大值，并将最大值放到最右边，在排序过程中，
  */
 public class Code02_BubbleSort {
