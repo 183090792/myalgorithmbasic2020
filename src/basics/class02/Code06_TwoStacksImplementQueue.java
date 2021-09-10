@@ -2,6 +2,10 @@ package basics.class02;
 
 import java.util.Stack;
 
+/**
+ * 如何用栈结构实现队列结构？
+ * 思路：两个栈实现队列
+ */
 public class Code06_TwoStacksImplementQueue {
 
 	public static class TwoStacksQueue {

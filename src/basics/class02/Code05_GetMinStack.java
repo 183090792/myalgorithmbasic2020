@@ -2,8 +2,21 @@ package basics.class02;
 
 import java.util.Stack;
 
+/**
+ * 获取栈的最小值
+ * 实现一个特殊的栈，在基本功能的基础上，再实现返回栈中最小元素的功能
+ *
+ * 1）pop、push、getMin操作的时间复杂度都是 O(1)。
+ *
+ * 2）设计的栈类型可以使用现成的栈结构。
+ */
 public class Code05_GetMinStack {
 
+	/**
+	 * 思路：
+	 * 使用两个栈，一个存放数据 A，一个存放当前最小值 B
+	 * 每次往 A 中存放数据时，先判断是否小于 B 栈顶的值，若小于则再往 B 存放当前置，若不是则继续存放栈顶值
+	 */
 	public static class MyStack1 {
 		private Stack<Integer> stackData;
 		private Stack<Integer> stackMin;

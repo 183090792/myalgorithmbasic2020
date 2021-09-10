@@ -1,7 +1,7 @@
 package basics.class02;
 
 /**
- * 删除指定值
+ * 把给定值都删除
  */
 public class Code02_DeleteGivenValue {
 

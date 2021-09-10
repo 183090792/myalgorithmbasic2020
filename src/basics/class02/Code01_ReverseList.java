@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 链表反转
+ * 链表和双链表如何反转
  */
 public class Code01_ReverseList {
 

@@ -1,5 +1,8 @@
 package basics.class02;
 
+/**
+ * 用数组实现队列、栈
+ */
 public class Code04_RingArray {
 
 	public static class MyQueue {
