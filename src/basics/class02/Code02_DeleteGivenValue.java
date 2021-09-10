@@ -1,5 +1,8 @@
 package basics.class02;
 
+/**
+ * 删除指定值
+ */
 public class Code02_DeleteGivenValue {
 
 	public static class Node {

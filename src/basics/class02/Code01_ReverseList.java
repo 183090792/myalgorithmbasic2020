@@ -3,6 +3,9 @@ package basics.class02;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 链表反转
+ */
 public class Code01_ReverseList {
 
 	public static class Node {
